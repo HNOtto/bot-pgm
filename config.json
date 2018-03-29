@@ -1,0 +1,11 @@
+{ 
+	"bot":{
+		"name":			"Bot-PGM",
+		"shortname":	"botty",
+		"prefix":		"!",
+		
+		"canalflood":	"idle-ro_discussion",
+		
+		"token":		"NDI3MTc5NTIzNjI1NDUxNTUx.DZhO3w.A1benj2voKOT-pndEmHIK_4SZHQ"
+	}
+}

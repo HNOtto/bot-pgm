@@ -1,0 +1,75 @@
+{
+	"broadcasts": [
+		{
+			"name":			"reset-start",
+			"channel":		"idle-ro_discussion",
+			"user":			false,
+			"times":		[{ "days": [0,1,2,3,4,5,6], "hours": [23], "mins": [0] }],
+			"msg":			"```C'est l'heure du reset ! A vos quêtes !```"
+		},
+		{
+			"name":			"start-pvp",
+			"channel":		"idle-ro_discussion",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [0], "hours": [22], "mins": [40] }],
+			"msg":			"Le PVP redémarre dans 20 minutes ! Lancez un ticket dès le reset !"
+		},
+		{
+			"name":			"end-pvp",
+			"channel":		"idle-ro_discussion",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [0], "hours": [14], "mins": [40] }],
+			"msg":			"Le PVP se termine dans 20 minutes ! Pressons !"
+		},
+		{
+			"name":			"inscription-woe",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [3], "hours": [18], "mins": [0] }],
+			"msg":			"⚔ WoE - Debut de l'inscription ⚔ \n(il reste 24h pour finir les recrutements !)"
+		},
+		{
+			"name":			"prepa-woe",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [4], "hours": [18], "mins": [0] }],
+			"msg":			"⚔ WoE - Préparation (n'oubliez pas de compléter le formulaire sur #annonces-pgm) ⚔"
+		},
+		{
+			"name":			"teams-woe",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [5], "hours": [18], "mins": [0] }],
+			"msg":			"⚔ WoE - Placement dans les équipes (suivez les directives) ⚔"
+		},
+		{
+			"name":			"start-woe",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [6], "hours": [13], "mins": [15] }],
+			"msg":			"⚔ La WoE commence dans 45 minutes !\n**Verifiez vos skill-sets et pet-skills PvP !!!**\nLa team Défense est pleine ? ⚔"
+		},
+		{
+			"name":			"woe-started",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [6], "hours": [14], "mins": [1] }],
+			"msg":			"⚔ WoE - La team défense peut repasser en idle mode ou RB à partir de maintenant !!! ⚔"
+		},		
+		{
+			"name":			"end-woe",
+			"channel":		"woe-pgm",
+			"role":			"Please Gank Me",
+			"user":			false,
+			"times":		[{ "days": [0], "hours": [13], "mins": [15] }],
+			"msg":			"⚔ La WoE termine dans 45 minutes ! Finissez vos combats ! ⚔"
+		}
+	]
+}
