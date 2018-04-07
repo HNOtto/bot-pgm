@@ -11,7 +11,7 @@ const announce = require("./announce.json");
 // Demarrage
 bot.on("ready", () => {
 	console.log("INFO : Program "+config.bot.name+" has started !");
-	
+
 	// Messages automatiques
 	const interval = bot.setInterval(function () {
 		var channel;
@@ -54,15 +54,15 @@ bot.on("ready", () => {
 
 // Pour chaque message
 bot.on("message", async message => {
-	
+
 	const messageClean = message.content.trim().toLowerCase();
 	const sender = message.author;
 	const member = message.member;
 	if (sender.bot) return; // Ignore les autres bots
-	
+
 	const jours = new Array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
-	const mois = new Array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
-	
+	const mois = new Array("janvier", "fï¿½vrier", "mars", "avril", "mai", "juin", "juillet", "aoï¿½t", "septembre", "octobre", "novembre", "dï¿½cembre");
+
 	// Chat
 	if (message.channel.name === config.bot.canalflood) {
 		chat.converse.forEach(function(converse) {
@@ -85,12 +85,12 @@ bot.on("message", async message => {
 			}
 		});
 	}
-	
+
 	// Commandes du bot
 	if (message.content.indexOf(config.bot.prefix) === 0) {
 		const args = message.content.slice(config.bot.prefix.length).trim().split(/ +/g);
 		const command = args.shift().toLowerCase();
-		
+
 		// Commande help
 		if (command === "help") {
 			var m = "Commandes utilisateurs : !ping !time";
@@ -99,14 +99,14 @@ bot.on("message", async message => {
 			}
 			message.channel.send(m);
 		}
-		
-		
+
+
 		// Commande ping
 		if (command === "ping") {
 			const m = await message.channel.send("Ping ?");
-			m.edit("Pong! Lattence de discord : "+(m.createdTimestamp-message.createdTimestamp)+"ms. Lattence du bot : "+Math.round(bot.ping)+"ms");
+			m.edit("Pong! Lattence de discord : "+(m.createdTimestamp-message.createdTimestamp)+"ms. Latence du bot : "+Math.round(bot.ping)+"ms");
 		}
-		
+
 		// Commande time
 		if (command === "time") {
 			var date = new Date();
@@ -117,7 +117,7 @@ bot.on("message", async message => {
 			m += "Il est : "+ heures + ":" + minutes + ":" + secondes +".";
 			message.reply(m);
 		}
-		
+
 		// Commande help
 		if (command === "announce") {
 			if (member.roles.find("name", "Modo")) {
@@ -158,7 +158,7 @@ bot.on("message", async message => {
 				}
 			}
 		}
-		
+
 	}
 
 });
