@@ -24,6 +24,11 @@ server.listen(port, (err) => {
   console.log(`server is listening on ${port}`)
 })
 
+// Prevent DYNO from sleeping :)
+setInterval(()=>{
+   http.get('http://botpgm.herokuapp.com');
+}, 300000);
+
 // Demarrage
 bot.on("ready", () => {
 	console.log("INFO : Program "+config.bot.name+" has started !");
