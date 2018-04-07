@@ -37,7 +37,7 @@
 			"role":			"Please Gank Me",
 			"user":			false,
 			"times":		[{ "days": [4], "hours": [18], "mins": [0] }],
-			"msg":			"⚔ WoE - Préparation (n'oubliez pas de compléter le formulaire sur #annonces-pgm) ⚔"
+			"msg":			"⚔ WoE - Préparation ⚔ \n(n'oubliez pas de compléter le formulaire sur #annonces-pgm)"
 		},
 		{
 			"name":			"teams-woe",
