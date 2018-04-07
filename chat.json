@@ -2,7 +2,7 @@
 	"converse": [
 		{
 			"botname":		true,
-			"lookup":		"partial",
+			"lookup":		"specific",
 			"questions":	[{ "words": ["bonjour", "bonsoir", "salut", "yoo", "yop", "hello", "hey", "salutation"] }],
 			"answer":		"Coucou ! Tu veux voir ma b*te ?"
 		},
@@ -18,10 +18,9 @@
 			"questions":	[{ "words": ["ça va", "ca va"] }],
 			"answer":		"Oui ! Enfin c'était jusqu'à ce que tu arrives ..."
 		},
-		
 		{
 			"botname":		false,
-			"lookup":		"partial",
+			"lookup":		"specific",
 			"questions":	[{ "words": ["bonjour", "bonsoir", "salut", "yo", "hello", "hey", "salutation"] }],
 			"answer":		"Mes salutations noble aventurier !"
 		},
@@ -31,20 +30,11 @@
 			"questions":	[{ "words": ["bonne nuit", "'nuit"] }],
 			"answer":		"Bonne nuit ! Tu débranches enfin ?!"
 		},
-		
-		
 		{
 			"botname":		false,
 			"lookup":		"partial",
 			"questions":	[{ "words": ["comment"] }, { "words": ["pgm"] }],
 			"answer":		"Les PGM forment une tribu sauvage ... pour en faire partie, patient tu dois être, te faire connaître et apprécier sur didi tu dois, et ne pas être dévoré avant tu peux espérer. Bonne chance !"
-		},
-		
-		{
-			"botname":		false,
-			"lookup":		"partial",
-			"questions":	[{ "words": ["elfy"] }, { "words": ["kaly"] }],
-			"answer":		"Quel joli couple !"
 		},
 		{
 			"botname":		false,
@@ -52,7 +42,7 @@
 			"questions":	[{ "words": ["bimbo"] }, { "words": ["drop"] }],
 			"answer":		"Parce que tu méritais mieux ? :p"
 		},
-		
+
 		{
 			"botname":		false,
 			"lookup":		"specific",
