@@ -94,7 +94,9 @@ bot.on("message", async message => {
 				converse.questions.forEach(function(question) {
 					var isTalkQuestion = false;
 					question.words.forEach(function(word) {
-						if ((converse.lookup === "partial" && messageClean.indexOf(word) > -1) || (converse.lookup === "specific" && messageClean === word)) {
+						if ((converse.lookup === "partial" && messageClean.indexOf(word) > -1) ||
+            (converse.lookup === "specific" && messageClean === word) ||
+            (converse.lookup === 'specific' && converse.botname && !!messageClean.match(new RegExp(word)))) {
 							isTalkQuestion = true;
 						}
 					});
