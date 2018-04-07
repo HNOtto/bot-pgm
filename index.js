@@ -27,6 +27,13 @@ server.listen(port, (err) => {
 // Demarrage
 bot.on("ready", () => {
 	console.log("INFO : Program "+config.bot.name+" has started !");
+
+  //Back message
+  bot.guilds.forEach((guild) => {
+      if(guild.available){
+        guild.channels.find('name', 'idle-ro_discussion').send(`I'm back bitches!`);
+      }
+  });
 	// Back message
 	// Messages automatiques
 	const interval = bot.setInterval(function () {
