@@ -2,16 +2,32 @@
 
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
+const http = require('http');
 // Config
 const config = require("./config.json");
 const chat = require("./chat.json");
 const announce = require("./announce.json");
 
+//Dummy http server to avoid toggling state on Heroku. Can be useful later
+const port = process.env.PORT || 1337
+
+const requestHandler = (request, response) => {
+  response.end('Hello Node.js Server!')
+}
+
+const server = http.createServer(requestHandler)
+
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err)
+  }
+  console.log(`server is listening on ${port}`)
+})
+
 // Demarrage
 bot.on("ready", () => {
 	console.log("INFO : Program "+config.bot.name+" has started !");
-
+	// Back message
 	// Messages automatiques
 	const interval = bot.setInterval(function () {
 		var channel;
