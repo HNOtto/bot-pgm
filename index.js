@@ -166,7 +166,7 @@ bot.on("message", async message => {
         runeData = runes[args[0]];
       } else {
         runeData = runes[Object.keys(runes).filter((rune) => {
-          return runes[rune].aliases.indexOf(runeName) !== -1
+          return runes[rune].aliases.indexOf(runeName) !== -1 || runes[rune].titleFr.toLowerCase() === runeName;
         })[0]];
       }
       if(!runeData){

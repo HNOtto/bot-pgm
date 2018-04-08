@@ -7,11 +7,13 @@ module.exports = {
       "Increases damage up to X% based on HP difference between character and the enemy. HP difference is capped at 50%.",
     descFr: `Augmente les dommages à X% de la différence de HP entre le perso et l'ennemi. Difference HP limitée à 50%.`,
     levels: ["10%", "12.5%", "15%"],
+    aliases : [],
     grades: ["Muka, Mandragora", "Spore, Orc Baby", "Smookie"]
   },
   aries: {
     title: "Aries",
     titleFr: "Bélier",
+    aliases : [],
     grades : [],
     levels : [],
     desc:
@@ -21,6 +23,7 @@ module.exports = {
   asthayi: {
     title: "Asthayi",
     titleFr: "Tempete",
+    aliases : [],
     grades : [],
     levels: ["2-target Very slow cast", "2-target Slow cast", "AoE Slow cast"],
     desc:
@@ -31,6 +34,7 @@ module.exports = {
   celeritas: {
     title: "Celeritas",
     titleFr: "Vitesse",
+    aliases : [],
     grades : [],
     levels: [],
     desc: "Boosts EVA before next spell casting.",
@@ -39,6 +43,7 @@ module.exports = {
   ciernie: {
     title: "Ciernie",
     titleFr: "Epines",
+    aliases : [],
     grades : [],
     levels: ["25%", "30%", "35%"],
     desc: "Reflects X% damage taken as true damage back to the enemy.",
@@ -47,6 +52,7 @@ module.exports = {
   desita: {
     title: "Desita",
     titleFr: "Bonheur",
+    aliases : [],
     grades : [],
     levels: ["2%", "3%", "4%"],
     desc: "Increases damage by X% for every beneficial effect over 4sec.",
@@ -56,6 +62,7 @@ module.exports = {
   enkeli: {
     title: "Enkeli",
     titleFr: "Ange",
+    aliases : [],
     grades : [],
     levels: ["heal 10% of crit", "", ""],
     desc: "For a short time, gain crit chance, and crits heal.",
@@ -65,6 +72,7 @@ module.exports = {
   ennerwelt: {
     title: "Ennerwelt",
     titleFr: "Enfer",
+    aliases : [],
     grades : [],
     levels: ["5%", "7,5%", "10%"],
     desc: "Burns enemy SP equal to X% of damage dealt for a time.",
@@ -74,6 +82,7 @@ module.exports = {
   era: {
     title: "Era",
     titleFr: "Ere",
+    aliases : [],
     grades : [],
     levels: ["15%", "20%", "25%"],
     desc:
@@ -83,6 +92,7 @@ module.exports = {
   flamma: {
     title: "Flamma",
     titleFr: "Brasier",
+    aliases : [],
     grades : [],
     levels: ["0,50%", "0,65%", "0,80%"],
     desc:
@@ -93,6 +103,7 @@ module.exports = {
   fluo: {
     title: "Fluo",
     titleFr: "Flux",
+    aliases : [],
     grades : [],
     levels: ["2%", "3%", "4%"],
     desc:
@@ -102,6 +113,7 @@ module.exports = {
   haere: {
     title: "Haere",
     titleFr: "Voyageur",
+    aliases : [],
     grades : [],
     levels: ["60% maxHP", "50% maxHP", "40% maxHP"],
     desc:
@@ -112,6 +124,7 @@ module.exports = {
   iawanan: {
     title: "Iawanan",
     titleFr: "Resistance",
+    aliases : [],
     grades : [],
     levels : [],
     desc:
@@ -121,6 +134,7 @@ module.exports = {
   iyali: {
     title: "Iyali",
     titleFr: "Famille",
+    aliases : [],
     grades : [],
     levels: [
       "+1% / ally -3% / enemy",
@@ -133,6 +147,7 @@ module.exports = {
   kupona: {
     title: "Kupona",
     titleFr: "Survie",
+    aliases : [],
     grades : [],
     levels: ["20%", "25%", "30%"],
     desc: "Damage reduction X% for 4 seconds.",
@@ -142,6 +157,7 @@ module.exports = {
   kuura: {
     title: "Kuura",
     titleFr: "Givre",
+    aliases : [],
     grades : [],
     levels: [],
     desc:
@@ -152,6 +168,7 @@ module.exports = {
   opari: {
     title: "Opari",
     titleFr: "Cadeau",
+    aliases : [],
     grades : [],
     levels: ["20%", "25%", "30%"],
     desc: "Deals additional X% own damage as true damage (on normal attacks).",
@@ -161,6 +178,7 @@ module.exports = {
   taika: {
     title: "Taika",
     titleFr: "Magie",
+    aliases : [],
     grades : [],
     levels: ["Very slow cast", "Slow cast", ""],
     desc: "Current skill cannot be cancelled, lowers casting time",
@@ -169,6 +187,7 @@ module.exports = {
   vald: {
     title: "Vald",
     titleFr: "Puissance",
+    aliases : [],
     grades : [],
     levels: ["0,5%", "0,7%", "0,9%"],
     desc:
