@@ -1,5 +1,3 @@
-000// Bot PGM
-
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const http = require('http');
@@ -8,6 +6,8 @@ const config = require("./config.json");
 const chat = require("./chat.json");
 const announce = require("./announce.json");
 
+const devChannelName = process.env.NODE_ENV !== 'production' ? 'botty-test' : '';
+let devChannel;
 //Dummy http server to avoid toggling state on Heroku. Can be useful later
 const port = process.env.PORT || 1337
 
@@ -32,11 +32,20 @@ setInterval(()=>{
 // Demarrage
 bot.on("ready", () => {
 	console.log("INFO : Program "+config.bot.name+" has started !");
-
+  // Get devChannel on dev mode
+  bot.guilds.forEach((guild) => {
+    if(guild.available && devChannelName){
+      devChannel = guild.channels.find('name', devChannelName);
+    }
+  })
   //Back message
   bot.guilds.forEach((guild) => {
       if(guild.available){
-        guild.channels.find('name', 'idle-ro_discussion').send(`I'm back bitches!`);
+        if(devChannel){
+          devChannel.send(`I'm back bitches!`);
+        } else {
+          guild.channels.find('name','idle-ro_discussion').send(`I'm back bitches!`);
+        }
       }
   });
 	// Back message
@@ -59,7 +68,7 @@ bot.on("ready", () => {
 						}
 					});
 					if (isTime) {
-						channel = guild.channels.find("name", broadcast.channel);
+						channel = guild.channels.find("name", devChannel || broadcast.channel);
 						if (channel) {
 							// Cible
 							if (broadcast.role) { target = guild.roles.find("name", broadcast.role); }
@@ -92,7 +101,7 @@ bot.on("message", async message => {
 	const mois = new Array("janvier", "f�vrier", "mars", "avril", "mai", "juin", "juillet", "ao�t", "septembre", "octobre", "novembre", "d�cembre");
 
 	// Chat
-	if (message.channel.name === config.bot.canalflood) {
+	if (message.channel.name === devChannelName || config.bot.canalflood) {
 		chat.converse.forEach(function(converse) {
 			if ((! converse.botname && messageClean.indexOf(config.bot.shortname) === -1) || (converse.botname && messageClean.indexOf(config.bot.shortname) > -1)) {
 				var isTalk = true;
@@ -127,14 +136,15 @@ bot.on("message", async message => {
 			if (member.roles.find("name", "Modo")) {
 				m += "\nCommandes admin : !announce";
 			}
-			message.channel.send(m);
+			message.author.send(m);
 		}
 
 
 		// Commande ping
 		if (command === "ping") {
-			const m = await message.channel.send("Ping ?");
-			m.edit("Pong! Lattence de discord : "+(m.createdTimestamp-message.createdTimestamp)+"ms. Latence du bot : "+Math.round(bot.ping)+"ms");
+      const channel = devChannelName ? devChannel : message.channel;
+			const m = await channel.send("Ping ?");
+			m.edit("Pong! Latence de discord : "+(m.createdTimestamp-message.createdTimestamp)+"ms. Latence du bot : "+Math.round(bot.ping)+"ms");
 		}
 
 		// Commande time
@@ -155,7 +165,7 @@ bot.on("message", async message => {
 				var m = "";
 				announce.broadcasts.forEach(function(broadcast) {
 					if (broadcast.name === args[0]) {
-						channel = message.guild.channels.find("name", broadcast.channel);
+						channel = message.guild.channels.find("name", devChannelName || broadcast.channel);
 						if (channel) {
 							// Cible
 							if (broadcast.role) { target = message.guild.roles.find("name", broadcast.role); }
@@ -173,7 +183,7 @@ bot.on("message", async message => {
 						m += broadcast.name + " : A ";
 						if (broadcast.role) { m += "@"+broadcast.role; }
 						if (broadcast.user) { m += "@"+broadcast.user; }
-						m += " dans #" + broadcast.channel;
+						m += " dans " + devChannel || channel;
 						broadcast.times.forEach(function(time) {
 							m += " : ";
 							time.days.forEach(function(day) { m += jours[day] + " "; });
@@ -184,7 +194,7 @@ bot.on("message", async message => {
 					}
 				});
 				if (! isSent) {
-					message.channel.send(m);
+					!!devChannelName ? devChannel.send(m) : message.channel.send(m);
 				}
 			}
 		}
