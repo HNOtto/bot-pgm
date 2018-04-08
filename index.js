@@ -5,11 +5,12 @@ const http = require('http');
 const config = require("./config.json");
 const chat = require("./chat.json");
 const announce = require("./announce.json");
-
+const runes = require('./runes');
 const devChannelName = process.env.NODE_ENV !== 'production' ? 'botty-test' : '';
 let devChannel;
 //Dummy http server to avoid toggling state on Heroku. Can be useful later
-const port = process.env.PORT || 1337
+const port = process.env.PORT || 1337;
+const PET_LEVEL_PER_RANK = [40, 80, 100];
 
 const requestHandler = (request, response) => {
   response.end('Hello Node.js Server!')
@@ -42,7 +43,7 @@ bot.on("ready", () => {
   bot.guilds.forEach((guild) => {
       if(guild.available){
         if(devChannel){
-          devChannel.send(`I'm back bitches!`);
+        //  devChannel.send(`I'm back bitches!`);
         } else {
           guild.channels.find('name','idle-ro_discussion').send(`I'm back bitches!`);
         }
@@ -118,7 +119,7 @@ bot.on("message", async message => {
 						isTalk = false;
 					}
 				});
-				if (isTalk) {
+				if (isTalk && !devChannelName) {
 					message.reply(converse.answer);
 				}
 			}
@@ -157,6 +158,39 @@ bot.on("message", async message => {
 			m += "Il est : "+ heures + ":" + minutes + ":" + secondes +".";
 			message.reply(m);
 		}
+
+    if(command === "rune"){
+      const runeName = args[0].toLowerCase().trim();
+      let runeData;
+      if(runes[runeName]){
+        runeData = runes[args[0]];
+      } else {
+        runeData = runes[Object.keys(runes).filter((rune) => {
+          return runes[rune].aliases.indexOf(runeName) !== -1
+        })[0]];
+      }
+      if(!runeData){
+        return message.channel.send('Mmmmmh, je ne connais pas cette rune.');
+      }
+      const fields = [];
+      runeData.levels.forEach((lvl, index) => {
+        fields.push({name : `Lv${index+1}`, value : lvl, inline:true})
+      });
+      runeData.grades.forEach((grade, index) => {
+        fields.push({name: `Rang ${index+1} (Pet Lv${PET_LEVEL_PER_RANK[index]})`,
+      value : grade, inline:true})
+    });
+      const embed = {
+        title : `${runeData.title} / ${runeData.titleFr}`,
+        color : 0xff88c7,
+        description : `${runeData.desc}
+
+${runeData.descFr}`,
+        fields
+        };
+
+      return message.channel.send({embed});
+    }
 
 		// Commande help
 		if (command === "announce") {
