@@ -99,7 +99,7 @@ bot.on("message", async message => {
 	if (sender.bot) return; // Ignore les autres bots
 
 	const jours = new Array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
-	const mois = new Array("janvier", "f�vrier", "mars", "avril", "mai", "juin", "juillet", "ao�t", "septembre", "octobre", "novembre", "d�cembre");
+	const mois = new Array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "d�cembre");
 
 	// Chat
 	if (message.channel.name === devChannelName || config.bot.canalflood) {
@@ -183,8 +183,7 @@ bot.on("message", async message => {
     });
     */
      runeData.levels.forEach((lvl, grade, index) => {
-  	fields.push({name : `Lv${index+1}`, value : lvl, inline:true})
-	 `&#09;`     ←  enfin, mettre un tab là quoi
+  	fields.push({name : `Lv${index+1}`, value : lvl, inline:true}) && `&#09;` &&
 	fields.push({name: `(Pet E${PET_LEVEL_PER_RANK[index]})`, value : grade, inline:true})
       });
       const embed = {
