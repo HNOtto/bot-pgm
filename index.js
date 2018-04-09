@@ -182,7 +182,7 @@ bot.on("message", async message => {
       value : grade, inline:true})
     });
     */
-     runeData.levels.forEach((lvl, grade, index) => {
+     runeData.levels.forEach((lvl, index) => {
   	fields.push({name : `Lv${index+1}`, value : lvl, inline:true}) && `&#09;` &&
 	fields.push({name: `(Pet E${PET_LEVEL_PER_RANK[index]})`, value : grade, inline:true})
       });
