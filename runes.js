@@ -83,7 +83,7 @@ module.exports = {
     desc: "Burns enemy SP equal to X% of damage dealt for a time.",
     descFr:
       "Durant un certain temps, les dégâts infligent une perte de SP à la cible.",
-    grades: ["Treasure map only"]
+    grades: ["Treasure map only", "Treasure map only", "Treasure map only"]
   },
   
   era: {
@@ -129,7 +129,7 @@ module.exports = {
       "Damage taken beyond a certain amount of Max_HP is reduced to 1. Duration = 3sec",
     descFr:
       "La perte max de HP est limité en fonction des HPmax durant un certain temps. Lorsque cette limite est atteinte les dégats excédant tombent à 1.",
-    grades: ["Treasure map only"]
+    grades: ["Treasure map only", "Treasure map only", "Treasure map only"]
   },
   
   iawanan: {
@@ -154,7 +154,7 @@ module.exports = {
     ],
     desc: "Gain damage for each ally. Reduce damage taken for each enemy.",
     descFr: `Durant un certain temps, augmente les dégats infligés par nombre d'alliés et diminue les dégats recus selon le nombre d'ennemis.`,
-    grades: ["Treasure map only"]
+    grades: ["Treasure map only", "Treasure map only", "Treasure map only"]
   },
   
   kupona: {
