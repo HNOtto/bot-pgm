@@ -411,7 +411,7 @@ module.exports = {
 		},
 	Thump: {	
 		title: "Thump",
-		"titleFr: "Grand Coup / Attaque Lourde",
+		titleFr: "Grand Coup / Attaque Lourde",
 		aliases: [],
 		desc:
 		"Deals damage (single target)",
