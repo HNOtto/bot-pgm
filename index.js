@@ -6,7 +6,7 @@ const config = require("./config.json");
 const chat = require("./chat.json");
 const announce = require("./announce.json");
 const runes = require('./runes');
-const petskills = require('./petskills');
+//const petskills = require('./petskills');
 const devChannelName = process.env.NODE_ENV !== 'production' ? 'botty-test' : '';
 let devChannel;
 //Dummy http server to avoid toggling state on Heroku. Can be useful later
@@ -204,7 +204,7 @@ ${runeData.descFr}`,
 
 		
 // Commande Petskills (ajouter !petskill / !PS / !Pskill / !pskill)
-	if(command === "petskill"){
+/*	if(command === "petskill"){
       const petskillName = args[0].toLowerCase().trim();
       let petskillData;
       if(petskills[petskillName]){
@@ -238,7 +238,7 @@ ${petskillData.descFr}`,
       return message.channel.send({embed});
     }	
 		
-		
+*/		
 		// Commande help
 		if (command === "announce") {
 			if (member.roles.find("name", "Modo")) {
