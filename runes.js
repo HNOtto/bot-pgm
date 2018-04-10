@@ -68,7 +68,7 @@ module.exports = {
     title: "Enkeli",
     titleFr: "Ange",
     aliases : ["ange", "enkeli", "enkéli"],
-    levels: ["heal 10% of crit", "", ""],
+    levels: ["heal 10% of crit", "heal 10% of crit", "heal 10% of crit"],
     desc: "For a short time, gain crit chance, and crits heal.",
     descFr:
       "CRIT augmenté et restitution de HP en cas de critique pendant un certain temps.",
@@ -148,9 +148,9 @@ module.exports = {
     titleFr: "Famille",
     aliases : ["iyali", "famille"],
     levels: [
-      "+1% / ally -3% / enemy",
-      "+2% / ally -4% / enemy",
-      "+3% / ally -5% / enemy"
+      "+1%/ally & -3%/enemy",
+      "+2%/ally & -4%/enemy",
+      "+3%/ally & -5%/enemy"
     ],
     desc: "Gain damage for each ally. Reduce damage taken for each enemy.",
     descFr: `Durant un certain temps, augmente les dégats infligés par nombre d'alliés et diminue les dégats recus selon le nombre d'ennemis.`,
