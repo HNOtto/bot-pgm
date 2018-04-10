@@ -57,11 +57,11 @@ module.exports = {
     title: "Desita",
     titleFr: "Bonheur",
     aliases : ["bonheur", "desita", "désita"],
-    grades : [],
     levels: ["2%", "3%", "4%"],
     desc: "Increases damage by X% for every beneficial effect over 4sec.",
     descFr:
-      "Augmente de X% les dégats pour chaque buffs (beneficial effect) pendant 4sec."
+      "Augmente de X% les dégats pour chaque buffs (beneficial effect) pendant 4sec.",
+    grades : ["Thief Bug, Vitata", "Pirate Skeleton, Rocker", "Isis"]
   },
   
   enkeli: {
@@ -72,7 +72,7 @@ module.exports = {
     desc: "For a short time, gain crit chance, and crits heal.",
     descFr:
       "CRIT augmenté et restitution de HP en cas de critique pendant un certain temps.",
-    grades: ["Thief Bug, Vitata", "Pirate Skeleton, Rocker", "Isis"]
+    grades: ["Fabre, Lunatic", "Eclipse, Tarou", "Deviling"]
   },
   
   ennerwelt: {
