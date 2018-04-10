@@ -246,7 +246,7 @@ module.exports = {
 		desc:
 		"Restore the max HP for the weakest friend with part of your HP",
 		descFr: `Restaure le max de HP pour l'allié le plus faible avec une partie de vos HP`,
-		levels: ["", "", "Spend own HP to recover weakest allies HP, Receives Recover Effect"],"
+		levels: ["", "", "Spend own HP to recover weakest allies HP, Receives Recover Effect"],
 		grades: ["Player lvl60", "C80 Spore, Eclipse", "C100 Mandragora, Farmiliar"]
 		},
 	`Magic Burn`: {	
