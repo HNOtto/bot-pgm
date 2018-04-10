@@ -6,6 +6,7 @@ const config = require("./config.json");
 const chat = require("./chat.json");
 const announce = require("./announce.json");
 const runes = require('./runes');
+const petskills = require('./petskills');
 const devChannelName = process.env.NODE_ENV !== 'production' ? 'botty-test' : '';
 let devChannel;
 //Dummy http server to avoid toggling state on Heroku. Can be useful later
@@ -158,7 +159,7 @@ bot.on("message", async message => {
 			m += "Il est : "+ heures + ":" + minutes + ":" + secondes +".";
 			message.reply(m);
 		}
-
+// Commande rune
     if(command === "rune"){
       const runeName = args[0].toLowerCase().trim();
       let runeData;
@@ -201,6 +202,43 @@ ${runeData.descFr}`,
       return message.channel.send({embed});
     }
 
+		
+// Commande Petskills (ajouter !petskill / !PS / !Pskill / !pskill)
+	if(command === "petskill"){
+      const petskillName = args[0].toLowerCase().trim();
+      let petskillData;
+      if(petskills[petskillName]){
+        petskillData = petskills[args[0]];
+      } else {
+        petskillData = petskills[Object.keys(petskills).filter((petskill) => {
+          return petskills[petskill].aliases.indexOf(petskillName) !== -1 || petskills[petskill].titleFr.toLowerCase() === petskillName;
+        })[0]];
+      }
+      if(!petskillData){
+        return message.channel.send('Mmmmmh, je ne connais pas cet pet skill.');
+      }
+      const fields = [];
+      
+      petskillData.levels.forEach((lvl, index) => {
+        fields.push({name : `Lv${index+1}`, value : lvl, inline:true})
+      });
+      petskillData.grades.forEach((grade, index) => {
+        fields.push({name: `Rang ${index+1}`, value : grade, inline:true})
+    });
+    
+      const embed = {
+        title : `${petskillData.title} / ${petskillData.titleFr}`,
+        color : 0xff88c7,
+        description : `${petskillData.desc}
+
+${petskillData.descFr}`,
+        fields
+        };
+
+      return message.channel.send({embed});
+    }	
+		
+		
 		// Commande help
 		if (command === "announce") {
 			if (member.roles.find("name", "Modo")) {
