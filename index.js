@@ -135,7 +135,7 @@ bot.on("message", async message => {
 		// Commande help
 		if (command === "help") {
 			var m = "Commandes utilisateurs : !ping !time";
-			if (member.roles.find("name", "Modo")) {
+			if (member.roles.find("name", "Modo") || member.roles.find("name", "Botty_devs")) {
 				m += "\nCommandes admin : !announce";
 			}
 			message.author.send(m);
@@ -241,7 +241,7 @@ ${petskillData.descFr}`,
 */		
 		// Commande help
 		if (command === "announce") {
-			if (member.roles.find("name", "Modo")) {
+			if (member.roles.find("name", "Modo") || member.roles.find("name", "Botty_devs")) {
 				var isSent = false;
 				var m = "";
 				announce.broadcasts.forEach(function(broadcast) {
