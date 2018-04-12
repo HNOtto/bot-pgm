@@ -37,7 +37,7 @@
 			"role":			"Please Gank Me",
 			"user":			false,
 			"times":		[{ "days": [4], "hours": [18], "mins": [0] }],
-			"msg":			"⚔ WoE - Préparation (n'oubliez pas de compléter le formulaire sur #annonces-pgm) ⚔"
+			"msg":			"⚔ WoE - Préparation ⚔ \n(n'oubliez pas de compléter le formulaire sur #annonces-pgm)"
 		},
 		{
 			"name":			"teams-woe",
@@ -53,7 +53,7 @@
 			"role":			"Please Gank Me",
 			"user":			false,
 			"times":		[{ "days": [6], "hours": [13], "mins": [15] }],
-			"msg":			"⚔ La WoE commence dans 45 minutes !\n**Verifiez vos skill-sets et pet-skills PvP !!!**\nLa team Défense est pleine ? ⚔"
+			"msg":			"⚔ La WoE commence dans 45 minutes ! ⚔\n**Verifiez vos skill-sets et pet-skills PvP !!!**\nLa team Défense est pleine ?"
 		},
 		{
 			"name":			"woe-started",
